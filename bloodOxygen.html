@@ -5,12 +5,9 @@
 <title>血氧</title>
 <!--bootstrap不支持IE兼容模式，为了让IE浏览器运行最新的渲染模式，将添加以下标签在页面中-->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-
 <!--.针对浏览器的内容做标识（使用meta标签调节浏览器的渲染方式）bootstrap不支持IE兼容模式，为了让IE浏览器运行最新的渲染模式，将添加以下标签在页面中-->
 <!-- 内核控制Meta标签，因为目前国内的主流浏览器都是双内核，故而添加meta标签来告诉浏览器使用什么内核来渲染页面-->
 <meta http-equiv="X-UA-Compatible" content="IE=9" />
-<meta name="viewport" content="width=device-width"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 <!--[if IE 6]>
 <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
@@ -39,27 +36,24 @@
     </div>
     <div class="g-bd clearfix">
         <div class="g-mn ">
-             <div class="user-info"><h2>心率血氧数据</h2></div>
-             
+             <div class="user-info">
+                 <h2>心率血氧数据</h2>
+             </div>
+             <!--
              <div class="content-top">
-             <span>当前孕周:</span><input type="input">23周0天</input> <span>开始监测时间</span><input>2016.01.01</input><span>监测时长</span><input>1小时34分钟48秒</input> <span>平均血氧</span><input>99%</input><span>平均心率</span><input>115次/分钟</input>
-             
-        </div>
-        <div style="width:75%;">
-        <canvas id="canvas"></canvas>
-        </div>
-        <br>
-        <br>
-        <button id="randomizeData">Randomize Data</button>
-        <button id="changeDataObject">Change Data Object</button>
-        <button id="addDataset">Add Dataset</button>
-        <button id="removeDataset">Remove Dataset</button>
-        <button id="addData">Add Data</button>
-        <button id="removeData">Remove Data</button>
+
+                 <span>当前孕周:</span><input type="input">23周0天</input> <span>开始监测时间</span><input>2016.01.01</input><span>监测时长</span><input>1小时34分钟48秒</input> <span>平均血氧</span><input>99%</input><span>平均心率</span><input>115次/分钟</input>
+             </div>
+             -->
+             <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
+                 
+             </div>
+                 
+        </div>  
     </div>
            
-           <div class="g-sd">
-             <div class="M-navsim clearfix">
+      <div class="g-sd">
+            <div class="M-navsim clearfix">
               <ul>
                  <li class="M-nav-list">体重趋势图</li>
                  <li class="M-nav-list  select">体重数据</li>
@@ -75,12 +69,14 @@
                <input></input>到<input></input><button>确定</button>
             </div>
             <div class="M-table-tit clearfix">
-            <h2>血氧</h2>
+                <h2>血氧</h2>
             </div>
-            <table class="table table-condensed ">
-            <caption class="text-center">数据</caption>
-            <thead>
-           <tr class="text-center">
+
+            <div class="M-tale">
+               <table class="table table-condensed ">
+               
+                 <thead>
+                   <tr class="text-center">
                      <td>日期</td>
                      <td>孕妇姓名</td>
                      <td>当前孕周</td>
@@ -89,71 +85,134 @@
                      <td>高密度蛋白质(mmol/L)</td>
                      <td>低密度蛋白质(mmol/L)</td>
                      <td>胆固醇/甘油三酯</td>
-           </tr>
-           </thead>
-           <tbody>
-             <tr>
-                     <td>日期</td>
-                     <td>孕妇姓名</td>
-                     <td>当前孕周</td>
-                     <td>胆固醇(mmol/L)</td>
-                     <td>甘油三酯(mmol/L)</td>
-                     <td>高密度蛋白质(mmol/L)</td>
-                     <td>低密度蛋白质(mmol/L)</td>
-                     <td>胆固醇/甘油三酯</td>
-            </tr>
-            <tr>
-          <td>日期</td>
-                     <td>孕妇姓名</td>
-                     <td>当前孕周</td>
-                     <td>胆固醇(mmol/L)</td>
-                     <td>甘油三酯(mmol/L)</td>
-                     <td>高密度蛋白质(mmol/L)</td>
-                     <td>低密度蛋白质(mmol/L)</td>
-                     <td>胆固醇/甘油三酯</td>
-           </tr>
-          <tr>
-          <td>日期</td>
-                     <td>孕妇姓名</td>
-                     <td>当前孕周</td>
-                     <td>胆固醇(mmol/L)</td>
-                     <td>甘油三酯(mmol/L)</td>
-                     <td>高密度蛋白质(mmol/L)</td>
-                     <td>低密度蛋白质(mmol/L)</td>
-                     <td>胆固醇/甘油三酯</td>
-            </tr>
-             <tr>
-              <td>日期</td>
-                     <td>孕妇姓名</td>
-                     <td>当前孕周</td>
-                     <td>胆固醇(mmol/L)</td>
-                     <td>甘油三酯(mmol/L)</td>
-                     <td>高密度蛋白质(mmol/L)</td>
-                     <td>低密度蛋白质(mmol/L)</td>
-                     <td>胆固醇/甘油三酯</td>
-          </tr>
-          <tr>
-          <td>日期</td>
-                     <td>孕妇姓名</td>
-                     <td>当前孕周</td>
-                     <td>胆固醇(mmol/L)</td>
-                     <td>甘油三酯(mmol/L)</td>
-                     <td>高密度蛋白质(mmol/L)</td>
-                     <td>低密度蛋白质(mmol/L)</td>
-                     <td>胆固醇/甘油三酯</td>
-         </tr>
-          <tr>
-          <td>日期</td>
-                     <td>孕妇姓名</td>
-                     <td>当前孕周</td>
-                     <td>胆固醇(mmol/L)</td>
-                     <td>甘油三酯(mmol/L)</td>
-                     <td>高密度蛋白质(mmol/L)</td>
-                     <td>低密度蛋白质(mmol/L)</td>
-                     <td>胆固醇/甘油三酯</td>
-            </tr>
-        </tbody>
-          </table>
+                    </tr>
+                 </thead>
+                 <tbody>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                    <tr>
+                      <td>日期</td>
+                      <td>孕妇姓名</td>
+                      <td>当前孕周</td>
+                      <td>胆固醇(mmol/L)</td>
+                      <td>甘油三酯(mmol/L)</td>
+                      <td>高密度蛋白质(mmol/L)</td>
+                      <td>低密度蛋白质(mmol/L)</td>
+                      <td>胆固醇/甘油三酯</td>
+                    </tr>
+                   
+                 </tbody>
+               </table>
+            </div>
+        
        
       </div>  
              
@@ -161,17 +220,57 @@
     </div>
 </div>
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="js/Chart.bundle.js"></script>
-<script type="text/javascript" src="js/bloodOxygen.js"></script>
- <!--[if lt IE 9] 支持IE9以下新标签>
+<script type="text/javascript" src="js/highcharts.js"></script>
+<script type="text/javascript" src="js/exporting.js"></script>
+
+<!--[if lt IE 9] 支持IE9以下新标签>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->
+ <![endif]-->
  <!--[if lte IE 6]>
  
   <script type="text/javascript" src="js/bootstrap-ie.js"></script>
  <![endif]-->
+<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title:{
+            text:''
+        },
+        
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Temperature (°C)'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: true
+            }
+        },
+        tooltip: {
+                shared: true,
+                crosshairs: true
+            },
+        series: [{
+            name: 'Tokyo',
+            data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }, {
+            name: 'London',
+            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        }]
+    });
+});
+        </script>
 
-<!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
 </body>
 </html>    
